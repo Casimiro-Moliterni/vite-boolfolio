@@ -44,6 +44,6 @@ export default {
 
 <style lang="scss" scoped>
 .card{
-    min-height: 200px;
+    min-height: 300px;
 }
 </style>
