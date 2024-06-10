@@ -1,11 +1,18 @@
 <script >
+import ProjectList from "./components/ProjectsList.vue";
 
+export default{
+
+  components:{
+    ProjectList
+  }
+}
 </script>
 
 <template>
-<h1>test bootstrap</h1>
+<ProjectList></ProjectList>
 </template>
 
-<style >
-
+<style lang="scss" >
+@use './style/generic';
 </style>
