@@ -1,14 +1,19 @@
 <script>
+import axios from "axios" ;
 export default {
     name: 'ProjectList',
     data() {
         return {
-            project: []
+            projects: []
         };
     },
     methods: {
         GetProject() {
-            console.log('test mounted');
+            axios.get('http://127.0.0.1:8000/api/project')
+
+            .then((response)=>{
+                this.projects= response.data.results;
+            });
         }
     },mounted(){
         this.GetProject()
