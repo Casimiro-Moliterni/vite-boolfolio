@@ -1,6 +1,18 @@
 <script>
 export default {
-    name: 'ProjectList'
+    name: 'ProjectList',
+    data() {
+        return {
+            project: []
+        };
+    },
+    methods: {
+        GetProject() {
+            console.log('test mounted');
+        }
+    },mounted(){
+        this.GetProject()
+    }
 }
 </script>
 
@@ -9,7 +21,7 @@ export default {
         <h1 class="text-center">Lista Progetti</h1>
         <div class="row row-cols-3 gy-3">
             <div class="col">
-                <div class="card" >
+                <div class="card">
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
                     <div class="card-body">
                         <h5 class="card-title">Card title</h5>
