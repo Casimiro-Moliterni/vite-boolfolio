@@ -3,6 +3,13 @@ export default {
     name: 'SingleProject',
     props:{
         projectInfo:Object
+    },
+    methods: {
+        minText(text){
+            if (text.length > 100) {
+                return text.substr(0,100) + '...';
+            }
+        }
     }
 }
 </script>
@@ -11,13 +18,13 @@ export default {
             <div class="col" >
                 <div class="card" >
                     <!-- <img src="..." class="card-img-top" alt="..."> -->
-                    <div class="card-body text-center">
+                    <div class="card-body text-start">
                         <h5 class="card-title">
                             <strong>Name:</strong> {{  projectInfo.name }}
                         </h5>
-                        <h5 class="card-title">
+                        <div class="card-title">
                             <strong>Client_Name:</strong>{{  projectInfo.client_name }}
-                        </h5>
+                        </div>
                         <div v-if=" projectInfo.type " class="text-start">
                             <strong>Type:</strong>{{ projectInfo.type.name }}
                         </div>
@@ -28,7 +35,7 @@ export default {
                             </span>
                         </div>
                         <p v-show="projectInfo.summary" class="card-text text-start">
-                            <strong>Content:</strong>  {{  projectInfo.summary }}
+                            <strong>Content:</strong>  {{  minText(projectInfo.summary) }}
                         </p>
                     </div>
                 </div>
@@ -37,6 +44,6 @@ export default {
 
 <style lang="scss" scoped>
 .card{
-    min-height: 400px;
+    min-height: 200px;
 }
 </style>
