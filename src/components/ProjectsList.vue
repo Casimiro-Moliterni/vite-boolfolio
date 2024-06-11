@@ -40,12 +40,12 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <div class="container ">
         <h1 class="text-center">Lista Progetti</h1>
         <div class="row row-cols-3 gy-3 mb-3">
             <SingleProject v-for="project in projects" :key="project.id" :projectInfo="project"></SingleProject>
         </div>
-        <nav aria-label="Page navigation example" class="d-flex justify-content-center">
+        <nav aria-label="Page navigation example" class="d-flex justify-content-center align-items-end">
             <ul class="pagination">
                 <li v-if="prevPageUrl" class="page-item"><a class="page-link"  @click="GetProject( this.currentPage - 1)">Previous</a></li>
                 <li v-if="nextPageUrl"  class="page-item"><a class="page-link" @click="GetProject(this.currentPage + 1)">Next</a></li>
@@ -54,4 +54,8 @@ export default {
     </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.container{
+    height: calc(100vh - 54px);
+}
+</style>
