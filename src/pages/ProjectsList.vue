@@ -29,10 +29,6 @@ export default {
                     this.nextPageUrl= response.data.results.next_page_url;
                 });
         },
-        // NextBtn(){
-        // },
-        // PreviousBtn(){
-        // },
     }, mounted() {
         this.GetProject(this.currentPage);
     }
