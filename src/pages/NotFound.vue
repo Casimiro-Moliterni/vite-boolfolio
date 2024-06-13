@@ -44,7 +44,7 @@ export default {
     background-image: linear-gradient(rgb(32, 28, 28), rgb(102, 102, 98));
     position: relative;
     z-index: 1;
-
+    overflow: hidden;
     .ms_overlay {
         position: absolute;
         opacity: 0.7;
@@ -55,6 +55,23 @@ export default {
         background-size: contain;
         background-position: center;
         background-image: url('https://static.vecteezy.com/system/resources/previews/017/398/835/original/glitch-error-effect-digital-background-free-png.png');
+        animation: shake 0.5s;
+  animation-iteration-count: 2;
+
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
     }
 
     .my_body_text {
